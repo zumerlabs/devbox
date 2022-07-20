@@ -14,6 +14,7 @@
     "release": "release-it --dry-run"
   },
   "author": "Juan Martín Muda",
+  "files": ["dist/*", "dist/**/*"],
   "license": "MIT",
   "devDependencies": {
     "@release-it/conventional-changelog": "^5.0.0",

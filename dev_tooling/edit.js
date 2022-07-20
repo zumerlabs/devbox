@@ -22,6 +22,7 @@ async function stripFile (filename) {
     delete contents.devDependencies
     delete contents.standard
     delete contents.scripts
+    delete contents.files
 
     await fsPromises.writeFile(`./dist/${filename}`, JSON.stringify(contents))
   } catch (err) {
