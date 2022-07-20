@@ -9,13 +9,15 @@
     "test": "standard --fix && mocha",
     "dev": "node ./dev_tooling/dev.js",
     "build": "standard --fix && node ./dev_tooling/build.js",
-    "release": "release"
+    "release": "release-it --no-npm --dry-run"
   },
   "author": "Juan Martín Muda",
   "license": "MIT",
   "devDependencies": {
+    "@release-it/conventional-changelog": "^5.0.0",
     "esbuild": "^0.14.49",
     "mocha": "^10.0.0",
+    "release-it": "^15.1.2",
     "standard": "^17.0.0"
   },
   "standard": {
