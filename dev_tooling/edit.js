@@ -24,7 +24,7 @@ async function stripFile (filename) {
     delete contents.scripts
     delete contents.files
 
-    await fsPromises.writeFile(`./dist/${filename}`, JSON.stringify(contents))
+    await fsPromises.writeFile(`./dist/${filename}`, JSON.stringify(contents, undefined, 4))
   } catch (err) {
     console.log(err)
   }
