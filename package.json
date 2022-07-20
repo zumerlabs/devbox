@@ -11,7 +11,7 @@
     "dev": "node ./dev_tooling/dev.js",
     "build": "node ./dev_tooling/build.js",
     "chore-build": "node ./dev_tooling/edit.js",
-    "release": "release-it --dry-run"
+    "release": "release-it"
   },
   "author": "Juan Martín Muda",
   "files": ["dist/*", "dist/**/*"],
