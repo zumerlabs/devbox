@@ -1,17 +1,17 @@
 {
-  "name": "zumer",
+  "name": "devbox",
   "version": "0.0.1",
   "description": "",
-  "main": "./dist/node/zumer.js",
-  "module": "./dist/module/zumer.js",
-  "browser": "./dist/browser/zumer.js",
+  "main": "./dist/node/index.js",
+  "module": "./dist/module/index.js",
+  "browser": "./dist/browser/index.js",
   "scripts": {
     "lint": "standard --fix",
     "test": "mocha",
     "dev": "node ./dev_tooling/dev.js",
     "build": "node ./dev_tooling/build.js",
     "chore-build": "node ./dev_tooling/edit.js",
-    "release": "dotenv release-it"
+    "release": "release-it"
   },
   "author": "Juan Martín Muda",
   "files": [
