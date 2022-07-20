@@ -24,5 +24,23 @@
 
 **revert**: Reverts. Reverts a previous commit
 
-## Release
+## Release it 
+
+Use --dry-run to show the interactivity and the commands it would execute.
+
+Use --only-version to use a prompt only to determine the version, and automate the rest.
+
+Use --no-increment to not increment the last version, but update the last existing tag/version.
+
+release-it major --preRelease=beta
+
+Consecutive beta releases (2.0.0-beta.1 and so on): release-it --preRelease
+
+release-it --preRelease=rc 
+
+Use script hooks to run shell commands at any moment during the release process (such as before:init or after:release).
+
+https://github.com/release-it/release-it/blob/master/docs/pre-releases.md
+
+
 
