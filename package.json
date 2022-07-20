@@ -1,6 +1,6 @@
 {
   "name": "zumer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "./dist/node/zumer.js",
   "module": "./dist/module/zumer.js",
@@ -14,7 +14,10 @@
     "release": "release-it"
   },
   "author": "Juan Martín Muda",
-  "files": ["dist/*", "dist/**/*"],
+  "files": [
+    "dist/*",
+    "dist/**/*"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@release-it/conventional-changelog": "^5.0.0",
