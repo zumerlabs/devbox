@@ -1,0 +1,26 @@
+{
+  "name": "zumer",
+  "version": "1.0.1",
+  "description": "",
+  "main": "./dist/node/zumer.js",
+  "module": "./dist/module/zumer.js",
+  "browser": "./dist/browser/zumer.js",
+  "scripts": {
+    "test": "standard --fix && mocha",
+    "dev": "node ./dev_tooling/dev.js",
+    "build": "standard --fix && node ./dev_tooling/build.js",
+    "release": "release"
+  },
+  "author": "Juan Martín Muda",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.14.49",
+    "mocha": "^10.0.0",
+    "standard": "^17.0.0"
+  },
+  "standard": {
+    "ignore": [
+      "/dev_tooling/"
+    ]
+  }
+}
