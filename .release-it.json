@@ -4,6 +4,9 @@
         "after:git:release": "echo After git push, before github release",
         "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     },
+    "npm": {
+        "publishPath": "dist"
+    },
     "git": {
         "commitMessage": "chore: release v${version}"
     },
