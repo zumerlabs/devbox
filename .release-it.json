@@ -5,7 +5,7 @@
         "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     },
     "npm": {
-        "publishPath": "dist"
+        "publishPath": "./dist"
     },
     "git": {
         "commitMessage": "chore: release v${version}"
