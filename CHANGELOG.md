@@ -1,5 +1,12 @@
 # Changelog for Devbox
 
+### [0.0.5](https://github.com/zumerlabs/devbox/compare/0.0.4...0.0.5) (2022-07-21)
+
+
+### Bug Fixes
+
+* github-token ([b82c7d2](https://github.com/zumerlabs/devbox/commit/b82c7d27b354a05f5ada30a662e1ab6c22858fec))
+
 ### [0.0.4](https://github.com/zumerlabs/devbox/compare/0.0.2...0.0.4) (2022-07-21)
 
 

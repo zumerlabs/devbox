@@ -10,4 +10,4 @@ https://blog.shahednasser.com/how-to-create-a-npx-tool/
 
 
 ## version
-<!--VERSION-->v0.0.4<!--/VERSION-->
+<!--VERSION-->v0.0.5<!--/VERSION-->
