@@ -1,5 +1,13 @@
 # Changelog for Devbox
 
+### [0.0.4](https://github.com/zumerlabs/devbox/compare/0.0.2...0.0.4) (2022-07-21)
+
+
+### Bug Fixes
+
+* config releasit and edit ([cde5f83](https://github.com/zumerlabs/devbox/commit/cde5f83f9a1873a7333162357a4e9b7facbeec57))
+* just publish dist folder ([adb86b7](https://github.com/zumerlabs/devbox/commit/adb86b7abc98bc6585784c746f892a4b2d382e59))
+
 ### [0.0.3](https://github.com/zumerlabs/devbox/compare/0.0.2...0.0.3) (2022-07-21)
 
 
