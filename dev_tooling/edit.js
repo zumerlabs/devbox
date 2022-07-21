@@ -1,7 +1,4 @@
-// 👇️ if using ES6 imports uncomment next line
-// import {readFile, writeFile, writeFileSync, promises as fsPromises} from 'fs';
 const { readFile, writeFile, promises: fsPromises } = require('fs')
-
 const pkg = require('../package.json')
 
 async function replaceInFile (filename, replacement) {
