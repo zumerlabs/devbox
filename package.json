@@ -11,7 +11,7 @@
     "bundle": "node ./dev_tooling/build.js",
     "build": "run-s lint test prebundle bundle",
     "prebundle": "node ./dev_tooling/edit.js",
-    "release": "dotenv release-it"
+    "release": "dotenv release-it --"
   },
   "author": "Juan Martín Muda",
   "files": [
