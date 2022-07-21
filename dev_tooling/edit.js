@@ -1,13 +1,16 @@
-const { readFile, writeFile, promises: fsPromises } = require('fs')
+const fs = require('fs')
+const fsPromises = require('fs').promises;
 const pkg = require('../package.json')
+const dir = './dist'
 
 async function replaceInFile (filename, replacement) {
+  if (!fs.existsSync(dir)){fs.mkdirSync(dir)}
   try {
     const contents = await fsPromises.readFile(filename, 'utf-8')
     const replaced = contents.replace(/(?<=\<!--VERSION-->v)(.*?)(?=\<!--\/VERSION-->)/, replacement)
-
+    
     await fsPromises.writeFile(filename, replaced)
-    await fsPromises.writeFile(`./dist/${filename}`, replaced)
+    await fsPromises.writeFile(`${dir}/${filename}`, replaced)
   } catch (err) {
     console.log(err)
   }
@@ -21,7 +24,7 @@ async function stripFile (filename) {
     delete contents.scripts
     delete contents.files
 
-    await fsPromises.writeFile(`./dist/${filename}`, JSON.stringify(contents, undefined, 4))
+    await fsPromises.writeFile(`${dir}/${filename}`, JSON.stringify(contents, undefined, 4))
   } catch (err) {
     console.log(err)
   }
