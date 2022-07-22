@@ -1,5 +1,4 @@
-const pkq = require('../package.json')
-const esbuild = require('esbuild')
+import esbuild from 'esbuild'
 const watchDev = async (formats) => {
   formats.forEach(format => {
     esbuild
@@ -7,7 +6,7 @@ const watchDev = async (formats) => {
         entryPoints: ['src/index.mjs'],
         bundle: true,
         format,
-        outfile: `public/js/${format}/${pkq.name}.js`,
+        outfile: `public/js/${format}/${process.env.npm_package_name}.js`,
         watch: true,
         metafile: true,
         watch: {
@@ -20,7 +19,7 @@ const watchDev = async (formats) => {
   })
 }
 
-watchDev(['esm', 'iife'])
+watchDev(['esm'])
   .then(result => {
     console.log('watching...')
   })
@@ -28,7 +27,7 @@ watchDev(['esm', 'iife'])
     esbuild.serve({
       servedir: 'public'
     }, {
-      entryPoints: ['src/index.js']
+      entryPoints: ['src/index.mjs']
     }).then(server => {
       console.log('serving...')
       console.log('host: ', server.host, ':', server.port)

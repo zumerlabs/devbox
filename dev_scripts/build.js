@@ -1,15 +1,14 @@
-const pkq = require('../package.json')
+import esbuild from 'esbuild'
+
 const setBanner = (platform) => {
   const template = `/**
-* ${pkq.name}
-* v.${pkq.version} (platform ${platform === 'neutral' ? 'es module' : platform})
-* Author ${pkq.author}
-* License ${pkq.license}
+* ${process.env.npm_package_name}
+* v.${process.env.npm_package_version} (platform ${platform === 'neutral' ? 'es module' : platform})
+* Author ${process.env.npm_package_author}
+* License ${process.env.npm_package_license}
 **/`
   return template
 }
-
-const esbuild = require('esbuild')
 
 const build = async (platforms) => {
   platforms.forEach(platform => {
@@ -18,7 +17,7 @@ const build = async (platforms) => {
         entryPoints: ['src/index.mjs'],
         bundle: true,
         platform,
-        outfile: `dist/${platform === 'neutral' ? 'module' : platform}/${pkq.name}.js`,
+        outfile: `dist/${platform === 'neutral' ? 'module' : platform}/${process.env.npm_package_name}.js`,
         metafile: true,
         minify: true,
         banner: {
@@ -35,5 +34,5 @@ const build = async (platforms) => {
       })
   })
 }
-
-build(['neutral', 'browser', 'node'])
+build(['neutral'])
+// build(['neutral', 'browser', 'node'])

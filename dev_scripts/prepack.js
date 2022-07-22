@@ -1,6 +1,6 @@
-const fs = require('fs')
-const fsPromises = require('fs').promises;
-const pkg = require('../package.json')
+import fs from 'fs'
+const fsPromises = fs.promises;
+import pkg from '../package.json' assert { type: 'json' };
 const dir = './dist'
 
 async function replaceInFile (filename, replacement) {
@@ -18,13 +18,13 @@ async function replaceInFile (filename, replacement) {
 
 async function stripFile (filename) {
   try {
-    var contents = pkg
-    delete contents.devDependencies
-    delete contents.standard
-    delete contents.scripts
-    delete contents.files
+    delete pkg.devDependencies
+    delete pkg.engines
+    delete pkg.standard
+    delete pkg.scripts
+    delete pkg.files
 
-    await fsPromises.writeFile(`${dir}/${filename}`, JSON.stringify(contents, undefined, 4))
+    await fsPromises.writeFile(`${dir}/${filename}`, JSON.stringify(pkg, undefined, 4))
   } catch (err) {
     console.log(err)
   }

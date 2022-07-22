@@ -43,4 +43,11 @@ Use script hooks to run shell commands at any moment during the release process 
 https://github.com/release-it/release-it/blob/master/docs/pre-releases.md
 
 
+https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+https://nodejs.org/api/esm.html#modules-ecmascript-modules
+
+
+
+
 
