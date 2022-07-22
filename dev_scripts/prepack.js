@@ -18,6 +18,7 @@ async function replaceInFile (filename, replacement) {
 
 async function stripFile (filename) {
   try {
+    // pkg.main = 
     delete pkg.devDependencies
     delete pkg.engines
     delete pkg.standard
@@ -29,6 +30,11 @@ async function stripFile (filename) {
     console.log(err)
   }
 }
+
+export async function populaTemplate (answers) {
+  console.log(JSON.stringify(answers, null, '  '));
+}
+
 
 replaceInFile('./README.md', pkg.version)
 stripFile('./package.json')
