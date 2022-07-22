@@ -1,5 +1,12 @@
 # Changelog for Devbox
 
+### [0.0.6](https://github.com/zumerlabs/devbox/compare/0.0.5...0.0.6) (2022-07-22)
+
+
+### Performance Improvements
+
+* adjust settings ([e32a449](https://github.com/zumerlabs/devbox/commit/e32a449a72182ce022cfabd2aab57698274722e0))
+
 ### [0.0.5](https://github.com/zumerlabs/devbox/compare/0.0.4...0.0.5) (2022-07-21)
 
 

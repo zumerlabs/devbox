@@ -1,6 +1,6 @@
 {
   "name": "devbox-toolkit",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "module": "./src/index.mjs",
   "type": "module",
@@ -11,7 +11,7 @@
     "dev": "node ./dev_scripts/dev_server.js",
     "lint": "standard --fix",
     "test": "mocha",
-    "prebuild":"npm run lint && npm test && node ./dev_scripts/prepack.js",
+    "prebuild": "npm run lint && npm test && node ./dev_scripts/prepack.js",
     "build": "node ./dev_scripts/build.js",
     "release": "dotenv release-it --"
   },
