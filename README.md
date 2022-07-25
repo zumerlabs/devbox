@@ -12,4 +12,4 @@ https://blog.shahednasser.com/how-to-create-a-npx-tool/
 
 
 ## version
-<!--VERSION-->v0.0.6<!--/VERSION-->
+<!--VERSION-->v0.1.0<!--/VERSION-->

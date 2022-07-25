@@ -1,5 +1,12 @@
 # Changelog for Devbox
 
+## [0.1.0](https://github.com/zumerlabs/devbox/compare/0.0.6...0.1.0) (2022-07-25)
+
+
+### Features
+
+* wip prompt to generate lib templates ([cad0deb](https://github.com/zumerlabs/devbox/commit/cad0deb521243d3bd16f58d7e010c729cca91183))
+
 ### [0.0.6](https://github.com/zumerlabs/devbox/compare/0.0.5...0.0.6) (2022-07-22)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "devbox-toolkit",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "",
   "main": "./src/index.mjs",
   "type": "module",
