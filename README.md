@@ -1,15 +1,21 @@
 # DEVBOX
 
-## FEATURESgithub 
+DevBox is a tool for providing a pleasant development environment for JS libraries.
 
-## NEXT
-Armar todo en ESM 
+## FEATURES
 
-Create an excutable package `npx devbox <your library name>` &&
-https://www.npmjs.com/package/inquirer
+DevBox provides out of the box:
 
-https://blog.shahednasser.com/how-to-create-a-npx-tool/
+- Dev server
+- Bundler
+- Linter
+- Test runner 
+- Releaser to Github or Gitlab
+- Publish your library to NPM without development setting
+- Keep a changelog
 
+## USAGE
+`npx devbox <your library name>` 
 
-## version
+## CURRENT VERSION 
 <!--VERSION-->v0.1.0<!--/VERSION-->

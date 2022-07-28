@@ -1,15 +1,25 @@
+import fs from 'fs'
 import { Command } from 'commander'
 import chalk from 'chalk'
 let projectName
 function init() {
     const program = new Command()
-    .arguments('<project-directory>')
-    .usage(`${chalk.green('<project-directory>')} [options]`)
+    .arguments('<project-name>')
+    .usage(`${chalk.green('<project-name>')} [options]`)
     .action(name => {
       projectName = name
       console.log(projectName)
+      fs.mkdirSync(`./${projectName}`)
+      fs.copyFile('./dev_scripts/README.md', `./${projectName}/README2.md`, (err) => {
+        if (err) throw err;
+          
+        console.log('File Copy Successfully.');
+      });
     })
-    .parse(process.argv);
+    .parse(process.argv)
+
+
+
     if (typeof projectName === 'undefined') {
         console.error('Please specify the project directory:');
         
