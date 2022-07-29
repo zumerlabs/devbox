@@ -10,45 +10,48 @@
  const questions = [
    {
      type: 'input',
-     name: 'first_name',
-     message: "What's your first name",
+     name: 'author',
+     message: "What's author name?",
    },
    {
-     type: 'input',
-     name: 'last_name',
-     message: "What's your last name",
-     default() {
-       return 'Doe';
-     },
+     type: 'list',
+     name: 'license',
+     message: "What's library license",
+     choices: [ 'MIT', 'Apache-2.0', 'BSD-3-Clause', 'BSD-2-Clause', 'GPL','LGPL','MPL-2', 'EPL-2.0'],
    },
    {
-     type: 'input',
-     name: 'fav_color',
-     message: "What's your favorite color",
-     transformer(color, answers, flags) {
-       const text = chalkPipe(color)(color);
-       if (flags.isFinal) {
-         return text + '!';
-       }
- 
-       return text;
-     },
-   },
-   {
-     type: 'input',
-     name: 'phone',
-     message: "What's your phone number",
-     validate(value) {
-       const pass = value.match(
-         /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-       );
-       if (pass) {
-         return true;
-       }
- 
-       return 'Please enter a valid phone number';
-     },
-   },
+    type: 'confirm',
+    name: 'changelog',
+    message: "Keep a changelog",
+    default: true
+  },
+  {
+    type: 'confirm',
+    name: 'repo',
+    message: "Have a repo?",
+    default: true
+  },
+  {
+    type: 'list',
+    name: 'release',
+    message: "Release on Github or Gitlab?",
+    choices: ['Github', 'Gitlab'],
+    when(answers) {
+      return answers.repo
+    }
+  },
+  {
+    type: 'confirm',
+    name: 'npm',
+    message: "Publish on NPM",
+    default: true
+  },
+  {
+    type: 'confirm',
+    name: 'demo',
+    message: "Demo site on build?",
+    default: true
+  }
  ]
  
  inquirer.prompt(questions).then((answers) => {
