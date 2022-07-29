@@ -30,9 +30,10 @@
     "standard": "^17.0.0",
     "validate-npm-package-name": "^4.0.0"
   },
-  "standard": {
-    "ignore": [
-      "/dev_scripts/"
-    ]
+  "standard": {},
+  "dependencies": {
+    "http-proxy-agent": "^5.0.0",
+    "https-proxy-agent": "^5.0.1",
+    "node-fetch": "^3.2.9"
   }
 }

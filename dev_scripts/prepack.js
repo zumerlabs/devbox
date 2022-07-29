@@ -32,7 +32,12 @@ async function stripFile (filename) {
 }
 
 export async function populaTemplate (answers) {
-  console.log(JSON.stringify(answers, null, '  '));
+  console.log(JSON.stringify(answers, null, '  '))
+  // README.md > change <name>, <license> 
+  // package.json > change <name>, <license>, chequear si van todos los scripts...
+  // .release-it.json > github/gitlab? , proxy?, npm?, changelog?
+  // .env > github_token if release it, proxy?
+  // demo on build
 }
 
 
