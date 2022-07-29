@@ -12,6 +12,8 @@ DevBox provides out of the box:
 - Test runner 
 - Releaser to Github or Gitlab
 - Publish your library to NPM without development setting
+- Semver versioning
+- Standar commits
 - Keep a changelog
 
 ## USAGE
@@ -21,15 +23,25 @@ DevBox provides out of the box:
 
 #### START
 1. Run `npx devbox <your library name>` 
-2. Answer prompt questions
-    2.1. Author
-    2.2. License
-    2.3. Keep a changelog file?
-    2.4. Release on Github o Gitlab?
-    2.5. Publish on NPM?
-    2.6. Include an static demo site ?
-2. `cd <your library name> && npm install`
-3. `npm run dev`
+2. Check if library name already exist on NPM. Options: name available, proceed; name taken, change or continue wo npm 
+3. Answer questions
+
+    - Author's name
+
+    - License
+
+    - Keep a changelog file?
+
+    - Release on Github or Gitlab?
+
+    - Publish on NPM? (if option 2 ok)
+
+    - Include an static demo site on dist folder?
+
+4. Time for DevBox to set up your development environment.
+5. `cd <your library name> && npm install`
+6. `npm run dev`
+7. Happy coding 🥳
 
 #### BUILD
 `npm run build`
