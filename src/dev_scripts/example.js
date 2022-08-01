@@ -55,19 +55,11 @@ const questions = [
   {
     type: 'input',
     name: 'httpproxy',
-    message: "What's http proxy?",
+    message: "What's proxy?",
     when (answers) {
       return answers.hasproxy
     }
-  },
-  {
-    type: 'input',
-    name: 'httpsproxy',
-    message: "What's https proxy?",
-    when (answers) {
-      return answers.hasproxy
-    }
-  },
+  }
 ]
 
 export const preguntas = (init) => {

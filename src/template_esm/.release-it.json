@@ -12,12 +12,12 @@
     },
     "github": {
         "release": true,
-        "proxy": "http://www-proxy.mrec.ar:8080"
+        "proxy": "${HTTP_PROXY}"
     },
     "plugins": {
         "@release-it/conventional-changelog": {
             "infile": "CHANGELOG.md",
-            "header": "# Changelog for Devbox",
+            "header": "# ${LIBRARY_NAME}'s changelog",
             "preset": {
                 "name": "conventionalcommits"
             },
