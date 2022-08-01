@@ -1,6 +1,6 @@
 import fs from 'fs'
 const fsPromises = fs.promises;
-import pkg from '../package.json' assert { type: 'json' };
+import pkg from '../../package.json' assert { type: 'json' };
 const dir = './dist'
 
 async function replaceInFile (filename, replacement) {
@@ -26,6 +26,27 @@ async function stripFile (filename) {
     delete pkg.files
 
     await fsPromises.writeFile(`${dir}/${filename}`, JSON.stringify(pkg, undefined, 4))
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+async function prepareTemplate (filename, replacements, outDir, type) {
+  if (!fs.existsSync(outDir)){fs.mkdirSync(outDir)}
+  try {
+    const contents = await fsPromises.readFile(filename, 'utf-8')
+    if (type === 'text') {
+      replacements.forEach(el => {
+        let regex = new RegExp(`/(?<=\<!--${el.toUpperCase()}-->v)(.*?)(?=\<!--\/${el.toUpperCase()}-->)/`, 'g')
+        contents.replace(regex, el)
+      })
+      await fsPromises.writeFile(`${outDir}/${filename}`, contents)
+    } else {
+      replacements.forEach(el => {
+        filename[el] = el
+      })
+      await fsPromises.writeFile(`${outDir}/${filename}`, JSON.stringify(filename, undefined, 3))
+    }
   } catch (err) {
     console.log(err)
   }

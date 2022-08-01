@@ -20,7 +20,6 @@
   "devDependencies": {
     "@release-it/conventional-changelog": "^5.0.0",
     "chalk": "^5.0.1",
-    "chalk-pipe": "^5.1.1",
     "commander": "^9.4.0",
     "dotenv-cli": "^6.0.0",
     "esbuild": "^0.14.49",
@@ -32,7 +31,6 @@
   },
   "standard": {},
   "dependencies": {
-    "http-proxy-agent": "^5.0.0",
     "https-proxy-agent": "^5.0.1",
     "node-fetch": "^3.2.9"
   }

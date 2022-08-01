@@ -45,7 +45,29 @@ const questions = [
     name: 'demo',
     message: 'Demo site on build?',
     default: true
-  }
+  },
+  {
+    type: 'input',
+    name: 'hasproxy',
+    message: "Behind a proxy?",
+    default: false
+  },
+  {
+    type: 'input',
+    name: 'httpproxy',
+    message: "What's http proxy?",
+    when (answers) {
+      return answers.hasproxy
+    }
+  },
+  {
+    type: 'input',
+    name: 'httpsproxy',
+    message: "What's https proxy?",
+    when (answers) {
+      return answers.hasproxy
+    }
+  },
 ]
 
 export const preguntas = (init) => {
