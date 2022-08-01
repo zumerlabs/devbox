@@ -49,7 +49,7 @@ const questions = [
   {
     type: 'input',
     name: 'hasproxy',
-    message: "Behind a proxy?",
+    message: 'Behind a proxy?',
     default: false
   },
   {
@@ -65,4 +65,3 @@ const questions = [
 export const preguntas = (init) => {
   if (init) inquirer.prompt(questions).then((answers) => populaTemplate(answers))
 }
-

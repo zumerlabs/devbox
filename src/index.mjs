@@ -3,7 +3,7 @@
  *
  * @param {*} a
  * @param {*} b
- * @return {*} 
+ * @return {*}
  */
 export const awesomeSum = (a, b) => {
   return a + b

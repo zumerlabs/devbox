@@ -7,7 +7,6 @@ const watchDev = async (formats) => {
         bundle: true,
         format,
         outfile: `public/js/${format}/${process.env.npm_package_name}.js`,
-        watch: true,
         metafile: true,
         watch: {
           async onRebuild (error, result) {

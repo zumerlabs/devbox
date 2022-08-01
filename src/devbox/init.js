@@ -5,8 +5,7 @@ import validate from 'validate-npm-package-name'
 import fetch from 'node-fetch'
 import HttpsProxyAgent from 'https-proxy-agent'
 import { preguntas } from './example.js'
-import { clear } from 'console'
-let proxy =  new HttpsProxyAgent('http://www-proxy.mrec.ar:8080')
+const proxy = new HttpsProxyAgent('http://www-proxy.mrec.ar:8080')
 let libraryName
 let initPrompt = false
 
@@ -19,22 +18,22 @@ export const program = new Command()
     libraryName = name
 
     // insert valitadeName fxn
-    let validateRes = validate(libraryName)
+    const validateRes = validate(libraryName)
     validateRes.warnings = validateRes.warnings || []
     validateRes.errors = validateRes.errors || []
-    let validateErrors = [... validateRes.errors, ...validateRes.warnings].map(el => ` - ${el}`).join('\n')
-    let resp = `- validating ${libraryName}... ${validateErrors ? '\n' + chalk.red(validateErrors)  : chalk.green('ok')}`
-    
+    const validateErrors = [...validateRes.errors, ...validateRes.warnings].map(el => ` - ${el}`).join('\n')
+    const resp = `- validating ${libraryName}... ${validateErrors ? '\n' + chalk.red(validateErrors) : chalk.green('ok')}`
+
     console.log(resp)
     if (validateErrors) console.log(chalk.gray('Change your library name and run me again'))
-   
+
     if (!validateErrors) {
       try {
         // insert checkAvailabity
-        const getNPM = await fetch(`https://registry.npmjs.com/${libraryName}`, { agent: proxy})
-        var result = await getNPM.json()
+        const getNPM = await fetch(`https://registry.npmjs.com/${libraryName}`, { agent: proxy })
+        const result = await getNPM.json()
         console.log('- checking availability on NPM...', result.error ? chalk.green('available!') : chalk.red('taken'))
-        if (result.hasOwnProperty('error')) { 
+        if (result.hasOwnProperty('error')) {
           initPrompt = true
         } else {
           console.log(chalk.gray('Try another library name and run me again'))
@@ -48,10 +47,10 @@ export const program = new Command()
       // insert checkAvailabity
       console.log('- filling the blanks...')
       preguntas(true)
-    } 
-   
+    }
+
     // insert buildTemplates
-  
+
     // check npm name
     // if available console and create folder and keeop name
     // else not avilable : change or no problem I dont  want to publish (overrride)
@@ -59,7 +58,7 @@ export const program = new Command()
     fs.mkdirSync(`./${libraryName}`)
     fs.copyFile('./dev_scripts/README.md', `./${libraryName}/README2.md`, (err) => {
       if (err) throw err
-        console.log('File Copy Successfully.')
-      })
+      console.log('File Copy Successfully.')
     })
+  })
   .parse()

@@ -8,11 +8,11 @@
     "node": ">=16.14"
   },
   "scripts": {
-    "dev": "node ./dev_scripts/dev_server.js",
+    "dev": "node ./src/devbox/dev_server.js",
     "lint": "standard --fix",
     "test": "mocha",
-    "prebuild": "npm run lint && npm test && node ./dev_scripts/prepack.js",
-    "build": "node ./dev_scripts/build.js",
+    "prebuild": "npm run lint && npm test && node ./src/devbox/prepack.js",
+    "build": "node ./src/devbox/build.js",
     "release": "dotenv release-it --"
   },
   "author": "Juan Martín Muda",
