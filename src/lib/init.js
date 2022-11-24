@@ -4,7 +4,7 @@ import chalk from 'chalk'
 import validate from 'validate-npm-package-name'
 import fetch from 'node-fetch'
 import HttpsProxyAgent from 'https-proxy-agent'
-import { preguntas } from './example.js'
+import { preguntas } from './prompts'
 const proxy = new HttpsProxyAgent('http://www-proxy.mrec.ar:8080')
 let libraryName
 let initPrompt = false

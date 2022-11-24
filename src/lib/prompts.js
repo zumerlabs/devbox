@@ -1,5 +1,5 @@
 import inquirer from 'inquirer'
-import { populaTemplate } from './prepack.js'
+import { populaTemplate } from './process.js'
 
 const questions = [
   {
